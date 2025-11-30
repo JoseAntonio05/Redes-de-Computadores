@@ -125,26 +125,26 @@ roteamento-ipv6/
 ├── assets/
 │   └── unibras-logo.png
 ├── configs/
-│   ├── RIPng/
-│   │   ├── R1-ripng.txt
-│   │   ├── R2-ripng.txt
-│   │   └── R3-ripng.txt
 │   ├── EIGRPv6/
 │   │   ├── R1-eigrpv6.txt
 │   │   ├── R2-eigrpv6.txt
 │   │   └── R3-eigrpv6.txt
-│   └── OSPFv3/
-│       ├── R1-ospfv3.txt
-│       ├── R2-ospfv3.txt
-│       └── R3-ospfv3.txt
+│   ├── OSPFv3/
+│   │   ├── R1-ospfv3.txt
+│   │   ├── R2-ospfv3.txt
+│   │   └── R3-ospfv3.txt
+│   └── RIPng/
+│       ├── R1-ripng.txt
+│       ├── R2-ripng.txt
+│       └── R3-ripng.txt
 ├── topologias/
-│   ├── ripng.pkt
 │   ├── eigrpv6.pkt
-│   └── ospfv3.pkt
+│   ├── ospfv3.pkt
+│   └── ripng.pkt
 ├── prints/
-│   ├── RIPng/
 │   ├── EIGRPv6/
-│   └── OSPFv3/
+│   ├── OSPFv3/
+│   └── RIPng/
 └── docs/
     └── relatorio.md
 ```
