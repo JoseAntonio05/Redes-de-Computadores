@@ -12,7 +12,7 @@
 **Redes de Computadores**
 
 ### 👨‍🎓 Aluno
-- José Antônio dos Santos Filho
+- José [Seu Sobrenome]
 
 ### 👨‍🏫 Orientador
 - Prof. Francismar Alves Martins Junior
@@ -80,7 +80,6 @@ Este trabalho implementa e compara três protocolos de roteamento dinâmico em I
 ## 🔹 Configuração dos Protocolos
 
 ### RIPng
-```plaintext
 ipv6 unicast-routing
 interface f0/0
  ipv6 address 2001:DB8:CAFE:1::1/64
@@ -89,3 +88,101 @@ interface s0/3/0
  ipv6 address 2001:DB8:CAFE:F::1/127
  ipv6 rip RIPNG enable
 ipv6 router rip RIPNG
+
+---
+
+### EIGRPv6
+ipv6 unicast-routing
+ipv6 router eigrp 10
+ router-id 1.1.1.1
+ no shutdown
+interface f0/0
+ ipv6 address 2001:DB8:CAFE:1::1/64
+ ipv6 eigrp 10
+interface s0/3/0
+ ipv6 address 2001:DB8:CAFE:F::1/127
+ ipv6 eigrp 10
+
+---
+
+### OSPFv3
+ipv6 unicast-routing
+ipv6 router ospf 1
+ router-id 1.1.1.1
+interface f0/0
+ ipv6 address 2001:DB8:CAFE:1::1/64
+ ipv6 ospf 1 area 0
+interface s0/3/0
+ ipv6 address 2001:DB8:CAFE:F::1/127
+ ipv6 ospf 1 area 0
+
+---
+
+## 📂 Estrutura do Repositório
+
+roteamento-ipv6/
+├── README.md
+├── assets/
+│   └── unibras-logo.png
+├── configs/
+│   ├── RIPng/
+│   │   ├── R1-ripng.txt
+│   │   ├── R2-ripng.txt
+│   │   └── R3-ripng.txt
+│   ├── EIGRPv6/
+│   │   ├── R1-eigrpv6.txt
+│   │   ├── R2-eigrpv6.txt
+│   │   └── R3-eigrpv6.txt
+│   └── OSPFv3/
+│       ├── R1-ospfv3.txt
+│       ├── R2-ospfv3.txt
+│       └── R3-ospfv3.txt
+├── topologias/
+│   ├── ripng.pkt
+│   ├── eigrpv6.pkt
+│   └── ospfv3.pkt
+├── prints/
+│   ├── RIPng/
+│   ├── EIGRPv6/
+│   └── OSPFv3/
+└── docs/
+    └── relatorio.md
+
+---
+
+## ✅ Checklist de Entrega
+- [x] Topologia com 3 roteadores
+- [x] Interfaces loopback configuradas
+- [x] Roteamento IPv6 habilitado
+- [x] RIPng configurado e testado
+- [x] EIGRPv6 configurado e testado
+- [x] OSPFv3 configurado e testado
+- [x] Conectividade validada (ping/traceroute)
+- [x] Repositório GitHub organizado
+- [x] Vídeo demonstrativo no YouTube
+
+---
+
+## 📅 Histórico de Versões
+
+| Versão | Data | Descrição |
+|--------|------|-----------|
+| v1.0.0 | 30/11/2025 | Conclusão do projeto com documentação completa |
+| v0.9.0 | 29/11/2025 | Implementação final do OSPFv3 e testes |
+| v0.7.0 | 28/11/2025 | Implementação do EIGRPv6 |
+| v0.5.0 | 27/11/2025 | Implementação do RIPng |
+| v0.1.0 | 26/11/2025 | Criação da topologia base |
+
+---
+
+## 📋 Informações Importantes
+
+- **Instituição:** UNIBRAS  
+- **Aluno:** José Antônio dos Santos Filho 
+- **Orientador:** Prof. Francismar Alves Martins Junior  
+- **Simulador:** Cisco Packet Tracer  
+- **Data de Conclusão:** 30 de novembro de 2025  
+
+**Aviso Legal:**  
+- Cisco Packet Tracer é de propriedade da Cisco Systems, Inc.  
+- Este projeto é para fins educacionais.  
