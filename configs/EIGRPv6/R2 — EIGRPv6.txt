@@ -1,17 +1,36 @@
-ipv6 unicast-routing
+enable
+configure terminal
+hostname R2
 !
-ipv6 router eigrp 10
- router-id 2.2.2.2
- no shutdown
-!
-interface f0/0
+interface FastEthernet0/0
+ ip address 2.2.2.2 255.255.255.0   ← IPv4 fictício para gerar Router-ID
+ ipv6 enable
  ipv6 address 2001:DB8:CAFE:2::1/64
  ipv6 eigrp 10
+ no shutdown
 !
-interface s0/3/0
+interface FastEthernet0/1
+ ipv6 enable
+ ipv6 address 2001:DB8:CAFE:3::1/64
+ ipv6 eigrp 10
+ no shutdown
+!
+interface Serial0/3/0
+ clock rate 64000
+ ipv6 enable
  ipv6 address 2001:DB8:CAFE:F::0/127
  ipv6 eigrp 10
+ no shutdown
 !
-interface s0/3/1
+interface Serial0/3/1
+ clock rate 64000
+ ipv6 enable
  ipv6 address 2001:DB8:CAFE:E::0/127
  ipv6 eigrp 10
+ no shutdown
+!
+ipv6 unicast-routing
+ipv6 router eigrp 10
+ no shutdown
+end
+write memory
