@@ -146,12 +146,12 @@ roteamento-ipv6/
 │   ├── eigrpv6.pkt
 │   ├── ospfv3.pkt
 │   └── ripng.pkt
-├── prints/
-│   ├── EIGRPv6/
-│   ├── OSPFv3/
-│   └── RIPng/
-└── docs/
-    └── relatorio.md
+├── docs/
+│   └── relatorio.md
+└── prints/
+    ├── EIGRPv6/
+    ├── OSPFv3/
+    └── RIPng/
 ```
 ---
 
